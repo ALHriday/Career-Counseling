@@ -5,6 +5,9 @@ import { createContext, useEffect } from "react";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "../Firebase/firebase.init";
 import { useState } from "react";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
@@ -12,6 +15,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    const [passwordVerification, setPasswordVerification] = useState(null)
     // const navigate = useNavigate();
 
     const provider = new GoogleAuthProvider();
@@ -38,21 +42,24 @@ const AuthProvider = ({ children }) => {
         return () => unSubscribe();
     }, [])
 
-    const me = 'Hriday'
+    const notify = (message) => toast(message);
 
     const values = {
-        me,
         handleRegister,
         user,
         LogOutUser,
         setUser,
         createUser,
-        logInUser
+        logInUser,
+        notify,
+        passwordVerification,
+        setPasswordVerification
 
     }
     return (
         <AuthContext.Provider value={values}>
             {children}
+            <ToastContainer></ToastContainer>
         </AuthContext.Provider>
 
     );

@@ -1,18 +1,22 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { sendPasswordResetEmail } from "firebase/auth";
+import auth from "../Firebase/firebase.init";
 
 const Login = () => {
-    const { logInUser, handleRegister, setUser } = useContext(AuthContext);
+    const { logInUser, handleRegister, setUser, notify, setPasswordVerification, passwordVerification } = useContext(AuthContext);
+
+    const emailRef = useRef();
 
     const handleRegisterUser = () => {
         handleRegister()
-        .then(result => {
-            setUser(result.user);
-            navigate('/');
-            console.log('LogIn Successfull');
-        })
-        .catch(error => error)
+            .then(result => {
+                setUser(result.user);
+                navigate('/');
+                notify('LogIn Successfull');
+            })
+            .catch(error => error)
     }
 
     const navigate = useNavigate();
@@ -21,16 +25,30 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+
         logInUser(email, password)
             .then(() => {
                 e.target.email.value = '';
                 e.target.password.value = '';
-                navigate('/')
-                console.log('LogIn Successfull');
+                navigate('/');
+                notify('LogIn Successfull');
             }
             ).catch(error => error.message)
     }
 
+    const handleForgotPassword = () => {
+        console.log('forgot password');
+        console.log(emailRef.current.value);
+        const email = emailRef.current.value;
+        if (!email) {
+            setPasswordVerification('Please verify your email address');
+        } else {
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    setPasswordVerification('Reset email password has been sent to your Email.');
+                }).then(error => error);
+        }
+    }
 
     return (
         <div className="flex flex-col gap-4 ">
@@ -42,24 +60,27 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                            <input ref={emailRef} type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                            <label className="label">
+                            <label onClick={handleForgotPassword} className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
+                            <h1 className="text-red-500 p-2">{ passwordVerification }</h1>
                         </div>
                     </form>
+                    
                     <div className="flex justify-center items-center">
                         <button onClick={handleRegisterUser} className="btn btn-sm btn-accent">SignIn With Google</button>
                     </div>
+                    
                     <h4 className="p-4 text-center">{`Don't have an account`}<Link className="underline text-blue-700 ml-2" to='/Register'>Register</Link></h4>
 
                 </div>

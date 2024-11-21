@@ -1,8 +1,24 @@
-# React + Vite
+# Career Counseling
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Assignment Category: Assignment-09-004
+Live Link:
 
-Currently, two official plugins are available:
+## Description
+Career counseling is a process that helps individuals understand their skills, interests, values, and goals to make informed decisions about their professional paths. It involves assessments, personalized advice, and guidance on career choices, job search strategies, skill development, and long-term career planning. Career counselors provide support in navigating career transitions, exploring new opportunities, and enhancing job satisfaction and success.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 5 key features
+1. Login/Logout
+2. Responsive Design
+3. Private Route
+4. SignIn With Google
+5. React Toast
+
+## Some Uses React Hooks
+1. useState Hooks
+2. useEffect Hooks
+3. useNavigate Hooks
+4. useLocation Hooks
+
+## Advance feature
+1. Context Api
+

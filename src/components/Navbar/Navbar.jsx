@@ -4,18 +4,18 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
 
-    const { user, LogOutUser, setUser } = useContext(AuthContext);
+    const { user, LogOutUser, setUser, notify } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
     const handleLogOut = () => {
         LogOutUser()
             .then(() => {
-                console.log('signOut Successfull');
+                notify('LogOut Successfull');
                 setUser(null);
                 navigate('/');
             }
-            ).catch(error => console.log(error)
+            ).catch(error => error
             )
     }
 
@@ -41,9 +41,12 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <NavLink to='/'>Home</NavLink>
-                        <NavLink to='/Register'>Register</NavLink>
-                        <NavLink to='/LogIn'>LogIn</NavLink>
+                        <NavLink className='' to='/'>Home</NavLink>
+                        {user ? <div className="flex flex-col">
+                            <NavLink className='' to='/Services'>Services</NavLink>
+                            <NavLink className='' to='/AboutUs'>About Us</NavLink>
+                        </div>
+                            : ''}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">Career Counseling</a>
@@ -51,10 +54,10 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <NavLink className='px-4 py-2' to='/'>Home</NavLink>
                 {user ? <div>
-                            <NavLink className='px-4 py-2' to='/Services'>Services</NavLink>
-                            <NavLink className='px-4 py-2' to='/AboutUs'>About Us</NavLink>
-                        </div>
-                        : ''}
+                    <NavLink className='px-4 py-2' to='/Services'>Services</NavLink>
+                    <NavLink className='px-4 py-2' to='/AboutUs'>About Us</NavLink>
+                </div>
+                    : ''}
             </div>
             <div className="navbar-end">
                 <ul className="menu menu-horizontal px-1">
@@ -63,8 +66,8 @@ const Navbar = () => {
 
                     {user && <div className="text-white mr-2">
                         <div>
-                            {user.photoURL === '' ? <p className="text-center p-2">{ user.displayName}</p> : <img className="w-8 h-8 rounded-full" src={`${user?.photoURL}`} alt="" />}
-                            
+                            {user.photoURL === '' ? <p className="text-center p-2">{user.displayName}</p> : <img className="w-8 h-8 rounded-full" src={`${user?.photoURL}`} alt="" />}
+
                         </div>
                     </div>}
                     {

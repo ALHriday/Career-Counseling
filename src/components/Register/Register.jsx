@@ -6,7 +6,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Register = () => {
 
-    const { setUser, createUser } = useContext(AuthContext);
+    const { setUser, createUser, notify } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -23,9 +23,9 @@ const Register = () => {
             .then(result => {
                 setUser(result.user);
                 navigate('/');
+                notify('Account Registration Successfull');
                 e.target.email.value = '';
                 e.target.password.value = '';
-                // setUser(result.user)
             }).then(error => error);
     }
 
@@ -39,7 +39,13 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="name" name="name" placeholder="Enter Name" className="input input-bordered" required />
+                        <input type="text" name="name" placeholder="Enter Name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">PhotoURL</span>
+                        </label>
+                        <input type="text" name="PhotoURL" placeholder="Enter your photo Link" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -52,9 +58,6 @@ const Register = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>
