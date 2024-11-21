@@ -30,7 +30,7 @@ const CardDetails = () => {
                         <p>Description: </p>
                         <p>{brief_description}</p>
                     </div>
-                    <div className="absolute top-0 right-1">
+                    <div className="absolute -top-2 -right-2">
                         <button onClick={() => navigate('/Services')} className="btn btn-sm btn-accent rounded-full">x</button>
                     </div>
                 </div>

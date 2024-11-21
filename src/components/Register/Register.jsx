@@ -1,25 +1,29 @@
 
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 
 
 const Register = () => {
 
     const { setUser, createUser, notify, passwordVerification, setPasswordVerification } = useContext(AuthContext);
+    const [isTrue, setIstrue] = useState(true);
 
     const navigate = useNavigate();
+    const passRef = useRef();
 
 
     const handleRegisterNewUser = (e) => {
         e.preventDefault();
-        // createUser(email)
-        // const displayName = e.target.name.value;
         const email = e.target.email.value;
+        const name = e.target.name.value;
         const password = e.target.password.value;
-        // if (password < 6) {
-        //     setPasswordVerification('Password must be less than 6 characters/digits.')
-        // }
+        const photo = e.target.photo.value;
+
+        console.log(name, photo);
+        
 
         createUser(email, password)
             .then(result => {
@@ -28,9 +32,22 @@ const Register = () => {
                 notify('Account Registration Successfull');
                 e.target.email.value = '';
                 e.target.password.value = '';
-            }).then(error => console.log(error)
-        );
-        setPasswordVerification('Registration Successfull')
+                if (result.user) {
+                    setPasswordVerification('Registration Successfull')
+                } else {
+                    setPasswordVerification(null)
+                }
+            }).then(error => error
+        );      
+    }
+
+    const handleToggle = () => {
+        
+        if (isTrue) {
+            passRef.current.type = 'text';
+        } else {
+            passRef.current.type = 'password';
+        }     
     }
 
     return (
@@ -49,7 +66,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">PhotoURL</span>
                         </label>
-                        <input type="text" name="PhotoURL" placeholder="Enter your photo Link" className="input input-bordered" required />
+                        <input type="text" name="photo" placeholder="Enter your photo Link" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -57,11 +74,14 @@ const Register = () => {
                         </label>
                         <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control relative">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                        <input ref={passRef} type="password" name="password" placeholder="password" className="input input-bordered" required />
+                        <div onClick={() => handleToggle(setIstrue(!isTrue))} className="absolute bottom-[18%] right-[5%]">
+                            {isTrue ? <FaRegEyeSlash /> : <FaRegEye />}
+                        </div>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>

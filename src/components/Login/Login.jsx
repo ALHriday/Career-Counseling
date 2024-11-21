@@ -1,13 +1,18 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { sendPasswordResetEmail } from "firebase/auth";
 import auth from "../Firebase/firebase.init";
 
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
+
 const Login = () => {
     const { logInUser, handleRegister, setUser, notify, setEmailVerification, emailVerification } = useContext(AuthContext);
 
     const emailRef = useRef();
+    const [isTrue, setIstrue] = useState(true);
+    const passRef = useRef();
 
     const handleRegisterUser = () => {
         handleRegister()
@@ -49,6 +54,13 @@ const Login = () => {
                 }).then(error => error);
         }
     }
+    const handleToggle = () => {
+        if (isTrue) {
+            passRef.current.type = 'text';
+        } else {
+            passRef.current.type = 'password';
+        }    
+    }
 
     return (
         <div className="flex flex-col gap-4 ">
@@ -62,11 +74,14 @@ const Login = () => {
                             </label>
                             <input ref={emailRef} type="email" name="email" placeholder="email" className="input input-bordered" required />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                            <input ref={passRef} type="password" name="password" placeholder="password" className="input input-bordered" required />
+                            <div onClick={() => handleToggle(setIstrue(!isTrue))} className="absolute top-[46%] right-[5%]">
+                            {isTrue ? <FaRegEyeSlash /> : <FaRegEye />}
+                        </div>
                             <label onClick={handleForgotPassword} className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
