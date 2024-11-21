@@ -16,6 +16,8 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [passwordVerification, setPasswordVerification] = useState(null);
     const [emailVerification, setEmailVerification] = useState(null);
+    const [cardItems, setCardItems] = useState([]);
+    const [cardItemDetails, setCardItemDetails] = useState([]);
 
     const provider = new GoogleAuthProvider();
     const handleRegister = () => {
@@ -43,6 +45,19 @@ const AuthProvider = ({ children }) => {
 
     const notify = (message) => toast(message);
 
+    useEffect(() => {
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                setCardItems(data)
+            }
+        )
+    }, [])
+    
+    const handleDetails = (cardItem) => {      
+        setCardItemDetails(cardItem);
+    }
+
     const values = {
         handleRegister,
         user,
@@ -54,15 +69,18 @@ const AuthProvider = ({ children }) => {
         emailVerification,
         setEmailVerification,
         passwordVerification,
-        setPasswordVerification
-
+        setPasswordVerification,
+        cardItems,
+        handleDetails,
+        cardItemDetails
     }
+
+
     return (
         <AuthContext.Provider value={values}>
             {children}
             <ToastContainer></ToastContainer>
         </AuthContext.Provider>
-
     );
 };
 

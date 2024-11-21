@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "image": "https://example.com/image1.jpg",
+        "service_name": "Career Counseling Sessions",
+        "category": "Online",
+        "brief_description": "One-on-one career counseling to help you discover the right career path.",
+        "pricing": "$100 per session",
+        "duration": "05-12-24 5-6pm",
+        "counselor": "John Doe",
+        "rating": 4.8
+    },
+    {
+        "id": 2,
+        "image": "https://example.com/image2.jpg",
+        "service_name": "Stress Management Workshop",
+        "category": "Offline",
+        "brief_description": "A group session to learn techniques for managing stress effectively.",
+        "pricing": "$80 per workshop",
+        "duration": "06-12-24 2-4pm",
+        "counselor": "Jane Smith",
+        "rating": 4.6
+    },
+    {
+        "id": 3,
+        "image": "https://example.com/image3.jpg",
+        "service_name": "Resume Building Session",
+        "category": "Online",
+        "brief_description": "Personalized assistance to craft a professional resume.",
+        "pricing": "$50 per session",
+        "duration": "07-12-24 3-4pm",
+        "counselor": "Alice Johnson",
+        "rating": 4.9
+    },
+    {
+        "id": 4,
+        "image": "https://example.com/image4.jpg",
+        "service_name": "Interview Prep Coaching",
+        "category": "Online",
+        "brief_description": "Mock interviews and feedback to improve your interviewing skills.",
+        "pricing": "$120 per session",
+        "duration": "08-12-24 1-2pm",
+        "counselor": "Robert Brown",
+        "rating": 4.7
+    },
+    {
+        "id": 5,
+        "image": "https://example.com/image5.jpg",
+        "service_name": "Life Coaching Series",
+        "category": "Offline",
+        "brief_description": "A comprehensive life coaching program to achieve personal goals.",
+        "pricing": "$500 for 5 sessions",
+        "duration": "09-12-24 6-8pm",
+        "counselor": "Emily Davis",
+        "rating": 4.9
+    },
+    {
+        "id": 6,
+        "image": "https://example.com/image6.jpg",
+        "service_name": "Time Management Workshop",
+        "category": "Online",
+        "brief_description": "Learn how to manage your time effectively and boost productivity.",
+        "pricing": "$90 per workshop",
+        "duration": "10-12-24 4-6pm",
+        "counselor": "Michael Wilson",
+        "rating": 4.5
+    },
+    {
+        "id": 7,
+        "image": "https://example.com/image7.jpg",
+        "service_name": "Leadership Skills Training",
+        "category": "Offline",
+        "brief_description": "Enhance your leadership qualities through interactive sessions.",
+        "pricing": "$150 per session",
+        "duration": "11-12-24 10-12am",
+        "counselor": "Sophia Martinez",
+        "rating": 4.8
+    },
+    {
+        "id": 8,
+        "image": "https://example.com/image8.jpg",
+        "service_name": "Public Speaking Coaching",
+        "category": "Online",
+        "brief_description": "Overcome stage fright and learn effective public speaking techniques.",
+        "pricing": "$100 per session",
+        "duration": "12-12-24 2-3pm",
+        "counselor": "James Lee",
+        "rating": 4.6
+    },
+    {
+        "id": 9,
+        "image": "https://example.com/image9.jpg",
+        "service_name": "Team Building Workshop",
+        "category": "Offline",
+        "brief_description": "A fun and interactive workshop to improve team collaboration.",
+        "pricing": "$200 per workshop",
+        "duration": "13-12-24 9-12am",
+        "counselor": "Olivia Garcia",
+        "rating": 4.7
+    },
+    {
+        "id": 10,
+        "image": "https://example.com/image10.jpg",
+        "service_name": "Mindfulness Meditation",
+        "category": "Online",
+        "brief_description": "Guided meditation sessions to reduce stress and enhance focus.",
+        "pricing": "$50 per session",
+        "duration": "14-12-24 6-7pm",
+        "counselor": "William Clark",
+        "rating": 4.8
+    },
+    {
+        "id": 11,
+        "image": "https://example.com/image11.jpg",
+        "service_name": "Conflict Resolution Skills",
+        "category": "Offline",
+        "brief_description": "Learn techniques to resolve conflicts effectively in personal and professional life.",
+        "pricing": "$120 per session",
+        "duration": "15-12-24 3-5pm",
+        "counselor": "Emma Thompson",
+        "rating": 4.7
+    },
+    {
+        "id": 12,
+        "image": "https://example.com/image12.jpg",
+        "service_name": "Career Change Planning",
+        "category": "Online",
+        "brief_description": "Explore new career opportunities and plan your transition.",
+        "pricing": "$150 per session",
+        "duration": "16-12-24 1-2pm",
+        "counselor": "Liam Turner",
+        "rating": 4.9
+    },
+    {
+        "id": 13,
+        "image": "https://example.com/image13.jpg",
+        "service_name": "Parenting Coaching",
+        "category": "Offline",
+        "brief_description": "Get expert advice on handling parenting challenges.",
+        "pricing": "$100 per session",
+        "duration": "17-12-24 5-6pm",
+        "counselor": "Isabella Adams",
+        "rating": 4.8
+    },
+    {
+        "id": 14,
+        "image": "https://example.com/image14.jpg",
+        "service_name": "Emotional Intelligence Workshop",
+        "category": "Online",
+        "brief_description": "Develop emotional intelligence to improve relationships and decision-making.",
+        "pricing": "$90 per workshop",
+        "duration": "18-12-24 6-8pm",
+        "counselor": "Ethan Phillips",
+        "rating": 4.7
+    },
+    {
+        "id": 15,
+        "image": "https://example.com/image15.jpg",
+        "service_name": "Executive Coaching",
+        "category": "Offline",
+        "brief_description": "Leadership coaching for executives to achieve organizational goals.",
+        "pricing": "$300 per session",
+        "duration": "19-12-24 2-4pm",
+        "counselor": "Charlotte White",
+        "rating": 4.9
+    },
+    {
+        "id": 16,
+        "image": "https://example.com/image16.jpg",
+        "service_name": "Stress Relief Techniques",
+        "category": "Online",
+        "brief_description": "Simple and effective techniques to manage and relieve stress.",
+        "pricing": "$70 per session",
+        "duration": "20-12-24 3-4pm",
+        "counselor": "Noah Harris",
+        "rating": 4.6
+    },
+    {
+        "id": 17,
+        "image": "https://example.com/image17.jpg",
+        "service_name": "Goal Setting Workshop",
+        "category": "Offline",
+        "brief_description": "Set and achieve your goals with proven strategies.",
+        "pricing": "$120 per workshop",
+        "duration": "21-12-24 4-6pm",
+        "counselor": "Amelia Walker",
+        "rating": 4.8
+    },
+    {
+        "id": 18,
+        "image": "https://example.com/image18.jpg",
+        "service_name": "Work-Life Balance Coaching",
+        "category": "Online",
+        "brief_description": "Learn to balance your professional and personal life effectively.",
+        "pricing": "$110 per session",
+        "duration": "22-12-24 5-6pm",
+        "counselor": "Benjamin Young",
+        "rating": 4.7
+    },
+    {
+        "id": 19,
+        "image": "https://example.com/image19.jpg",
+        "service_name": "Networking Skills Training",
+        "category": "Offline",
+        "brief_description": "Master the art of networking to grow your professional connections.",
+        "pricing": "$150 per session",
+        "duration": "23-12-24 10-12am",
+        "counselor": "Harper Scott",
+        "rating": 4.8
+    },
+    {
+        "id": 20,
+        "image": "https://example.com/image20.jpg",
+        "service_name": "Internship Placement Assistance",
+        "category": "Offline",
+        "brief_description": "Get help finding and securing internship opportunities in your desired industry.",
+        "pricing": "$120 per session",
+        "duration": "24-12-24 12-1pm",
+        "counselor": "Daniel Lee",
+        "rating": 4.7
+    }
+]

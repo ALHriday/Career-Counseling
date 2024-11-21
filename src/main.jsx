@@ -14,32 +14,48 @@ import Register from './components/Register/Register.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import Services from './components/Services/Services.jsx';
 import About from './components/About/About.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import Cards from './components/Cards/Cards.jsx';
+import CardDetails from './components/CardDetails/CardDetails.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
         element: <Home></Home>,
       },
       {
-        path: '/LogIn',
+        path: 'LogIn',
         element: <Login></Login>
       },
       {
-        path: '/Register',
+        path: 'Register',
         element: <Register></Register>
       },
       {
-        path: '/Services',
-        element: <Services></Services>
+        path: 'Services',
+        element: <Services></Services>,
       },
       {
-        path: '/AboutUs',
+        path: 'Cards',
+        element: <Cards></Cards>
+      },
+      {
+        path: 'Card',
+        element: <CardDetails></CardDetails>
+      },
+      {
+        path: 'Services/Card/:id',
+        element: <CardDetails></CardDetails>
+      },
+      {
+        path: 'AboutUs',
         element: <About></About>
-      }
+      },
     ],
   },
 ]);

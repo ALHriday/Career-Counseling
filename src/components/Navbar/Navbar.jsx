@@ -66,8 +66,7 @@ const Navbar = () => {
 
                     {user && <div className="text-white mr-2">
                         <div>
-                            {user.photoURL === '' ? <p className="text-center p-2">{user.displayName}</p> : <img className="w-8 h-8 rounded-full" src={`${user?.photoURL}`} alt="" />}
-
+                            {user.photoURL === '' ? <p className="text-center p-2">{user.displayName}</p> : <img title={user?.displayName} className="w-8 h-8 cursor-pointer rounded-full" src={`${user?.photoURL}`} alt="" />}
                         </div>
                     </div>}
                     {
