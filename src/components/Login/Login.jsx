@@ -5,7 +5,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import auth from "../Firebase/firebase.init";
 
 const Login = () => {
-    const { logInUser, handleRegister, setUser, notify, setPasswordVerification, passwordVerification } = useContext(AuthContext);
+    const { logInUser, handleRegister, setUser, notify, setEmailVerification, emailVerification } = useContext(AuthContext);
 
     const emailRef = useRef();
 
@@ -41,11 +41,11 @@ const Login = () => {
         console.log(emailRef.current.value);
         const email = emailRef.current.value;
         if (!email) {
-            setPasswordVerification('Please verify your email address');
+            setEmailVerification('Please verify your email address');
         } else {
             sendPasswordResetEmail(auth, email)
                 .then(() => {
-                    setPasswordVerification('Reset email password has been sent to your Email.');
+                    setEmailVerification('Reset email password has been sent to your Email.');
                 }).then(error => error);
         }
     }
@@ -73,7 +73,7 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
-                            <h1 className="text-red-500 p-2">{ passwordVerification }</h1>
+                            <h1 className="text-red-500 p-2">{ emailVerification }</h1>
                         </div>
                     </form>
                     

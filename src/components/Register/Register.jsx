@@ -6,7 +6,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Register = () => {
 
-    const { setUser, createUser, notify } = useContext(AuthContext);
+    const { setUser, createUser, notify, passwordVerification, setPasswordVerification } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -17,7 +17,9 @@ const Register = () => {
         // const displayName = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        // console.log(displayName, email, password);
+        // if (password < 6) {
+        //     setPasswordVerification('Password must be less than 6 characters/digits.')
+        // }
 
         createUser(email, password)
             .then(result => {
@@ -26,7 +28,9 @@ const Register = () => {
                 notify('Account Registration Successfull');
                 e.target.email.value = '';
                 e.target.password.value = '';
-            }).then(error => error);
+            }).then(error => console.log(error)
+        );
+        setPasswordVerification('Registration Successfull')
     }
 
     return (
@@ -61,6 +65,7 @@ const Register = () => {
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>
+                        <h1 className="text-red-500 p-2">{ passwordVerification }</h1>
                     </div>
                 </form>
                 <h4 className="p-4 text-center">{`Already have an account`}<Link className="underline text-blue-700 ml-2" to='/LogIn'>LogIn</Link></h4>
