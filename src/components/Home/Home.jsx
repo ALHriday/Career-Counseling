@@ -15,13 +15,11 @@ const Home = () => {
                 <h1 className="text-4xl font-bold my-6 col-span-1 md:col-span-2 lg:col-span-3 px-6 border-b py-6">Career Counselor: </h1>
                 {homeCard && homeCard.map((card, idx) => <div className="mx-auto" key={idx}>
                     <div className="card bg-base-100 w-76 md:w-80 shadow-xl border">
-                        <figure >
-                            <div className="w-full h-[200px] p-2">
-                                <img className="w-full h-full rounded-xl"
-                                    src={card.image}
-                                />
-                            </div>
-                        </figure>
+                        <div className="w-72 h-[200px] p-4">
+                            <img className="w-full h-full object-fill rounded-xl"
+                                src={card.image}
+                            />
+                        </div>
                         <div className="card-body items-center">
                             <h2 className="card-title">
                                 {card.counselor}

@@ -49,7 +49,7 @@ const Navbar = () => {
                         <NavLink className='' to='/AboutUs'>About Us</NavLink>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Career Counseling</a>
+                <h1 className="text-[16px] font-bold md:text-xl">Career Counseling</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <NavLink className='px-4 py-2' to='/'>Home</NavLink>
@@ -61,9 +61,9 @@ const Navbar = () => {
                 <NavLink className='px-4 py-2' to='/AboutUs'>About Us</NavLink>
             </div>
             <div className="navbar-end">
-                <ul className="menu menu-horizontal p-1">
+                <ul className="flex gap-1 p-1">
                     {user ? ''
-                        : <NavLink className='px-4 py-2' to='/Register'>Register</NavLink>}
+                        : <NavLink className='p-2' to='/Register'>Register</NavLink>}
 
                     {user && <div className="text-white mr-2 flex justify-center items-center">
                         <div>
@@ -76,9 +76,8 @@ const Navbar = () => {
                         user && user ?
                             <button onClick={handleLogOut} className="btn btn-sm">LogOut</button>
                             :
-                            <NavLink className='px-4 py-2' to='/LogIn'>LogIn</NavLink>
+                            <NavLink className='p-2' to='/LogIn'>LogIn</NavLink>
                     }
-
                 </ul>
             </div>
         </div>
