@@ -6,6 +6,7 @@ import auth from "../Firebase/firebase.init";
 
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
     const { logInUser, handleRegister, setUser, notify, setEmailVerification, emailVerification } = useContext(AuthContext);
@@ -92,7 +93,7 @@ const Login = () => {
                     </form>
                     
                     <div className="flex justify-center items-center">
-                        <button onClick={handleRegisterUser} className="btn btn-sm btn-accent">SignIn With Google</button>
+                        <button onClick={handleRegisterUser} className="btn btn-sm btn-accent"><FaGoogle /> SignIn With Google</button>
                     </div>
                     
                     <h4 className="p-4 text-center">{`Don't have an account`}<Link className="underline text-blue-700 ml-2" to='/Register'>Register</Link></h4>
