@@ -4,18 +4,18 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Card = ({ cardItem }) => {
-    // console.log(cardItem);
+
     const { handleDetails } = useContext(AuthContext);
-    const {id, service_name, image, category, pricing, duration, counselor, rating } = cardItem;
+    const {id, image, service_name, category, pricing, duration, counselor, rating } = cardItem;
 
     return (
-        <div className="">
-            <div className="card bg-base-100 w-96 shadow-xl">
-                <figure>
-                    <img
-                        src={image}
-                         />
-                </figure>
+        <div>
+            <div className="card bg-base-100 w-76 md:w-80 shadow-xl mx-auto border">
+            <div className="w-full h-[200px] p-2">
+                        <img className="w-full h-full rounded-xl"
+                            src={image}
+                        />
+                    </div>
                 <div className="card-body items-center">
                     <h2 className="card-title">
                         {counselor}
@@ -26,7 +26,7 @@ const Card = ({ cardItem }) => {
                     <p>Duration: { duration}</p>
                     <p>Rating: { rating}</p>
                     <div className="card-actions justify-center">
-                        <Link to={`Card/${id}`}><button onClick={() => handleDetails(cardItem)} className="btn btn-accent">Details</button></Link>
+                        <Link to={`Card/${id}`}><button onClick={() => handleDetails(cardItem)} className="btn btn-accent btn-sm">Details</button></Link>
                     </div>
                 </div>
             </div>

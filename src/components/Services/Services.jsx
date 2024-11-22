@@ -12,14 +12,15 @@ const Services = () => {
     }
 
     return (
-        <div className="min-h-screen p-6">
+        <div className="min-h-screen p-6 flex flex-col">
             <div className="py-6">
                 <Cards></Cards>
             </div>
 
-            <div className="border-t-2">
-                <div className="grid grid-cols-2 gap-6 ml-auto px-4 py-8">
-                    <div className="mt-8">
+            <div className="">
+                <div className="grid grid-cols-1 gap-6 ml-auto px-4 py-8">
+                    <h1 className="text-2xl font-bold py-2 border-b">Share Your Comments Here....</h1>
+                    <div className="mt-4">
                         {comments && comments.map((c, idx) => <p key={idx}>{c}</p>)}
                     </div>
                     <div>

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -19,9 +20,8 @@ const Navbar = () => {
             )
     }
 
-
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 border-b">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,9 +44,9 @@ const Navbar = () => {
                         <NavLink className='' to='/'>Home</NavLink>
                         {user ? <div className="flex flex-col">
                             <NavLink className='' to='/Services'>Services</NavLink>
-                            <NavLink className='' to='/AboutUs'>About Us</NavLink>
                         </div>
                             : ''}
+                        <NavLink className='' to='/AboutUs'>About Us</NavLink>
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">Career Counseling</a>
@@ -55,22 +55,25 @@ const Navbar = () => {
                 <NavLink className='px-4 py-2' to='/'>Home</NavLink>
                 {user ? <div>
                     <NavLink className='px-4 py-2' to='/Services'>Services</NavLink>
-                    <NavLink className='px-4 py-2' to='/AboutUs'>About Us</NavLink>
+                    
                 </div>
                     : ''}
+                <NavLink className='px-4 py-2' to='/AboutUs'>About Us</NavLink>
             </div>
             <div className="navbar-end">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal p-1">
                     {user ? ''
                         : <NavLink className='px-4 py-2' to='/Register'>Register</NavLink>}
 
-                    {user && <div className="text-white mr-2">
+                    {user && <div className="text-white mr-2 flex justify-center items-center">
                         <div>
-                            {user.photoURL === '' ? <p className="text-center p-2">{user.displayName}</p> : <img title={user?.displayName} className="w-8 h-8 cursor-pointer rounded-full" src={`${user?.photoURL}`} alt="" />}
+                            {user && user?.email ?
+                                <img title={user?.displayName} className="w-9 h-9 cursor-pointer rounded-full border" src={user?.photoURL} />
+                                : <FaUserCircle />}
                         </div>
                     </div>}
                     {
-                        user ?
+                        user && user ?
                             <button onClick={handleLogOut} className="btn btn-sm">LogOut</button>
                             :
                             <NavLink className='px-4 py-2' to='/LogIn'>LogIn</NavLink>

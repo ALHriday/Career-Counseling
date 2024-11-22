@@ -21,7 +21,7 @@ const Login = () => {
                 navigate('/');
                 notify('LogIn Successfull');
             })
-            .catch(error => error)
+            .catch(error => setEmailVerification(error.code))
     }
 
     const navigate = useNavigate();
@@ -38,12 +38,11 @@ const Login = () => {
                 navigate('/');
                 notify('LogIn Successfull');
             }
-            ).catch(error => error.message)
+            ).catch(error => setEmailVerification(error.code))
     }
 
     const handleForgotPassword = () => {
-        console.log('forgot password');
-        console.log(emailRef.current.value);
+
         const email = emailRef.current.value;
         if (!email) {
             setEmailVerification('Please verify your email address');
@@ -51,7 +50,7 @@ const Login = () => {
             sendPasswordResetEmail(auth, email)
                 .then(() => {
                     setEmailVerification('Reset email password has been sent to your Email.');
-                }).then(error => error);
+                }).catch(error => setEmailVerification(error.code));
         }
     }
     const handleToggle = () => {
@@ -79,7 +78,7 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input ref={passRef} type="password" name="password" placeholder="password" className="input input-bordered" required />
-                            <div onClick={() => handleToggle(setIstrue(!isTrue))} className="absolute top-[46%] right-[5%]">
+                            <div onClick={() => handleToggle(setIstrue(!isTrue))} className="absolute top-[46%] right-[5%] cursor-pointer">
                             {isTrue ? <FaRegEyeSlash /> : <FaRegEye />}
                         </div>
                             <label onClick={handleForgotPassword} className="label">

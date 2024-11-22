@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "https://example.com/image1.jpg",
+        "image": "https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Career Counseling Sessions",
         "category": "Online",
         "brief_description": "One-on-one career counseling to help you discover the right career path.",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "image": "https://example.com/image2.jpg",
+        "image": "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Stress Management Workshop",
         "category": "Offline",
         "brief_description": "A group session to learn techniques for managing stress effectively.",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "image": "https://example.com/image3.jpg",
+        "image": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Resume Building Session",
         "category": "Online",
         "brief_description": "Personalized assistance to craft a professional resume.",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "image": "https://example.com/image4.jpg",
+        "image": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Interview Prep Coaching",
         "category": "Online",
         "brief_description": "Mock interviews and feedback to improve your interviewing skills.",
@@ -45,7 +45,7 @@
     },
     {
         "id": 5,
-        "image": "https://example.com/image5.jpg",
+        "image": "https://images.pexels.com/photos/709188/pexels-photo-709188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Life Coaching Series",
         "category": "Offline",
         "brief_description": "A comprehensive life coaching program to achieve personal goals.",
@@ -56,7 +56,7 @@
     },
     {
         "id": 6,
-        "image": "https://example.com/image6.jpg",
+        "image": "https://images.pexels.com/photos/936043/pexels-photo-936043.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Time Management Workshop",
         "category": "Online",
         "brief_description": "Learn how to manage your time effectively and boost productivity.",
@@ -67,7 +67,7 @@
     },
     {
         "id": 7,
-        "image": "https://example.com/image7.jpg",
+        "image": "https://images.pexels.com/photos/837306/pexels-photo-837306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Leadership Skills Training",
         "category": "Offline",
         "brief_description": "Enhance your leadership qualities through interactive sessions.",
@@ -78,7 +78,7 @@
     },
     {
         "id": 8,
-        "image": "https://example.com/image8.jpg",
+        "image": "https://images.pexels.com/photos/832998/pexels-photo-832998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Public Speaking Coaching",
         "category": "Online",
         "brief_description": "Overcome stage fright and learn effective public speaking techniques.",
@@ -89,7 +89,7 @@
     },
     {
         "id": 9,
-        "image": "https://example.com/image9.jpg",
+        "image": "https://images.pexels.com/photos/840996/pexels-photo-840996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Team Building Workshop",
         "category": "Offline",
         "brief_description": "A fun and interactive workshop to improve team collaboration.",
@@ -100,7 +100,7 @@
     },
     {
         "id": 10,
-        "image": "https://example.com/image10.jpg",
+        "image": "https://images.pexels.com/photos/775091/pexels-photo-775091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Mindfulness Meditation",
         "category": "Online",
         "brief_description": "Guided meditation sessions to reduce stress and enhance focus.",
@@ -111,7 +111,7 @@
     },
     {
         "id": 11,
-        "image": "https://example.com/image11.jpg",
+        "image": "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Conflict Resolution Skills",
         "category": "Offline",
         "brief_description": "Learn techniques to resolve conflicts effectively in personal and professional life.",
@@ -122,7 +122,7 @@
     },
     {
         "id": 12,
-        "image": "https://example.com/image12.jpg",
+        "image": "https://images.pexels.com/photos/715546/pexels-photo-715546.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Career Change Planning",
         "category": "Online",
         "brief_description": "Explore new career opportunities and plan your transition.",
@@ -133,7 +133,7 @@
     },
     {
         "id": 13,
-        "image": "https://example.com/image13.jpg",
+        "image": "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Parenting Coaching",
         "category": "Offline",
         "brief_description": "Get expert advice on handling parenting challenges.",
@@ -144,7 +144,7 @@
     },
     {
         "id": 14,
-        "image": "https://example.com/image14.jpg",
+        "image": "https://images.pexels.com/photos/29465002/pexels-photo-29465002/free-photo-of-young-smiling-man-in-urban-setting-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Emotional Intelligence Workshop",
         "category": "Online",
         "brief_description": "Develop emotional intelligence to improve relationships and decision-making.",
@@ -155,7 +155,7 @@
     },
     {
         "id": 15,
-        "image": "https://example.com/image15.jpg",
+        "image": "https://images.pexels.com/photos/354951/pexels-photo-354951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Executive Coaching",
         "category": "Offline",
         "brief_description": "Leadership coaching for executives to achieve organizational goals.",
@@ -166,7 +166,7 @@
     },
     {
         "id": 16,
-        "image": "https://example.com/image16.jpg",
+        "image": "https://images.pexels.com/photos/29488105/pexels-photo-29488105/free-photo-of-moody-portrait-of-a-young-man-in-dark-tones.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Stress Relief Techniques",
         "category": "Online",
         "brief_description": "Simple and effective techniques to manage and relieve stress.",
@@ -177,7 +177,7 @@
     },
     {
         "id": 17,
-        "image": "https://example.com/image17.jpg",
+        "image": "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Goal Setting Workshop",
         "category": "Offline",
         "brief_description": "Set and achieve your goals with proven strategies.",
@@ -188,7 +188,7 @@
     },
     {
         "id": 18,
-        "image": "https://example.com/image18.jpg",
+        "image": "https://images.pexels.com/photos/29475239/pexels-photo-29475239/free-photo-of-stylish-modern-male-portrait-on-neutral-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Work-Life Balance Coaching",
         "category": "Online",
         "brief_description": "Learn to balance your professional and personal life effectively.",
@@ -199,7 +199,7 @@
     },
     {
         "id": 19,
-        "image": "https://example.com/image19.jpg",
+        "image": "https://images.pexels.com/photos/28368876/pexels-photo-28368876/free-photo-of-a-man-in-black-sitting-on-a-red-couch.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Networking Skills Training",
         "category": "Offline",
         "brief_description": "Master the art of networking to grow your professional connections.",
@@ -210,7 +210,7 @@
     },
     {
         "id": 20,
-        "image": "https://example.com/image20.jpg",
+        "image": "https://images.pexels.com/photos/29472229/pexels-photo-29472229/free-photo-of-elderly-man-enjoying-a-stroll-in-bournemouth.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "service_name": "Internship Placement Assistance",
         "category": "Offline",
         "brief_description": "Get help finding and securing internship opportunities in your desired industry.",

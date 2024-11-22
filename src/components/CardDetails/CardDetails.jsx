@@ -11,15 +11,17 @@ const CardDetails = () => {
     return (
         <div className="py-12 flex justify-center items-center">
             <div className="card bg-base-100 w-96 shadow-xl relative">
-                <figure>
-                    <img
-                        src={image}
-                    />
+                <figure >
+                    <div className="w-full h-[180px]">
+                        <img className="w-full h-full"
+                            src={image}
+                        />
+                    </div>
                 </figure>
                 <div className="card-body items-center">
                     <h2 className="card-title text-4xl">
                         {counselor}
-                        <div className="badge badge-secondary">{category}</div>
+                        <div className="badge badge-success">{category}</div>
                     </h2>
                     <p>{service_name}</p>
                     <p>Price: {pricing}</p>
@@ -31,7 +33,7 @@ const CardDetails = () => {
                         <p>{brief_description}</p>
                     </div>
                     <div className="absolute -top-2 -right-2">
-                        <button onClick={() => navigate('/Services')} className="btn btn-sm btn-accent rounded-full">x</button>
+                        <button onClick={() => navigate('/Services')} className="btn btn-sm btn-secondary font-bold rounded-full">x</button>
                     </div>
                 </div>
 

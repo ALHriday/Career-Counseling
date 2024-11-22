@@ -19,6 +19,15 @@ const AuthProvider = ({ children }) => {
     const [cardItems, setCardItems] = useState([]);
     const [cardItemDetails, setCardItemDetails] = useState([]);
 
+    const [homeCard, setHomeCard] = useState([]);
+
+
+    useEffect(() => {
+        const cards = [...cardItems];
+        const card = cards.slice(0, 6)
+        setHomeCard(card);
+    }, [cardItems])
+
     const provider = new GoogleAuthProvider();
     const handleRegister = () => {
         return signInWithPopup(auth, provider)
@@ -51,7 +60,7 @@ const AuthProvider = ({ children }) => {
             .then(data => {
                 setCardItems(data)
             }
-        )
+        ).catch(error => error)
     }, [])
     
     const handleDetails = (cardItem) => {      
@@ -72,7 +81,8 @@ const AuthProvider = ({ children }) => {
         setPasswordVerification,
         cardItems,
         handleDetails,
-        cardItemDetails
+        cardItemDetails,
+        homeCard
     }
 
 

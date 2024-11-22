@@ -4,11 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase/firebase.init";
 
 
 const Register = () => {
 
-    const { setUser, createUser, notify, passwordVerification, setPasswordVerification } = useContext(AuthContext);
+    const { setUser, createUser, passwordVerification, setPasswordVerification } = useContext(AuthContext);
     const [isTrue, setIstrue] = useState(true);
 
     const navigate = useNavigate();
@@ -21,24 +23,32 @@ const Register = () => {
         const name = e.target.name.value;
         const password = e.target.password.value;
         const photo = e.target.photo.value;
-
-        console.log(name, photo);
         
-
         createUser(email, password)
             .then(result => {
                 setUser(result.user);
+
+                if (password.length < 6) {
+                    return setPasswordVerification('Password Must be 6 Characters or longer.')
+                }
+
                 navigate('/');
-                notify('Account Registration Successfull');
+                setPasswordVerification('Account Registration Successfull');
                 e.target.email.value = '';
                 e.target.password.value = '';
-                if (result.user) {
-                    setPasswordVerification('Registration Successfull')
-                } else {
-                    setPasswordVerification(null)
+
+                const profile = {
+                    displayName: name,
+                    photoURL: photo
                 }
-            }).then(error => error
-        );      
+        
+                updateProfile(auth.currentUser, profile)
+                    .then(() => {
+                        setPasswordVerification('');
+                    }
+                ).catch(error => setPasswordVerification(error.code))
+            }).catch(error =>  setPasswordVerification(error.code)
+        ); 
     }
 
     const handleToggle = () => {
@@ -79,7 +89,7 @@ const Register = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input ref={passRef} type="password" name="password" placeholder="password" className="input input-bordered" required />
-                        <div onClick={() => handleToggle(setIstrue(!isTrue))} className="absolute bottom-[18%] right-[5%]">
+                        <div onClick={() => handleToggle(setIstrue(!isTrue))} className="absolute bottom-[18%] right-[5%] cursor-pointer">
                             {isTrue ? <FaRegEyeSlash /> : <FaRegEye />}
                         </div>
                     </div>
